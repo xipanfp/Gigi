@@ -1,0 +1,272 @@
+'<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #fff;
+            background: url('foto_de_fundo.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Permite o posicionamento absoluto do player */
+        }
+
+        .container {
+            background: url('foto_de_casal.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: center center;
+            padding: 60px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            height: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1, p {
+            font-size: 2em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e04d36;
+        }
+
+        .audio-player {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            z-index: 10; /* Garante que o player fique visível sobre outros elementos */
+        }
+
+        .audio-player audio {
+            width: 300px; /* Ajuste o tamanho do player conforme necessário */
+            height: auto;
+        }
+
+        .play-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: #e04d36;
+        }<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #fff;
+            background: url('foto_de_fundo.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin: 0 0 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.4em;
+            margin: 20px 0;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e04d36;
+        }
+
+        /* Estilo específico da segunda tela */
+        .second-container {
+            background: url('foto_de_casal.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 60px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            height: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .audio-player {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .audio-player audio {
+            width: 300px;
+            height: auto;
+        }
+    </style>a
+</head>
+<body>
+
+    <!-- Primeira etapa -->
+    <div id="initialContainer" class="container">
+        <h1>Boa noite, Gigi! </h1>
+		<p> Gostou do  concerto Candlelight,O Quarteto de Cordas - Monte Cristo, eles mandam bem né ? Mas não estou aqui para isso Tenho algo para te dizer e essa foi a forma que encotrei de fazer,  gostaria de saber o que ? </p>
+        <p>  </p>
+        <button id="continueButton" class="btn">Sim, eu quero saber!!</button>
+    </div>
+
+    <!-- Segunda etapa -->
+    <div id="secondContainer" class="second-container" style="display:none;">
+        <h1> A vida e como um livro, já pensou nisso ?</h1>
+        <p>Assim como você e um novo capitulo na minha vida eu também sou um  novo capitulo  sua vida porém agora podemos decidir a  escrever juntos cada linha da minha, da sua e da nossa história. Concordsa
+		que  Podemos terminar esse livros juntos lado a lado , linha por  linha ate o ultimo capitulo, paragrafo, frase, palavra  e estar junto ate o ultimo ponto final de nossas vidas ?. Que fazer acontecer que tentar escreve essas linhas. Falamos sobre dar certo sobre a possibildade de não dar certo  mas se decerto Gig .........</p>
+        <!-- Botão para iniciar música, já que é na segunda etapa que a música deve começar -->
+        <button id="playButton" class="btn" style="margin-top: 20px;">Clica aqui Gigi e pensa comigo , e se de certo ?</button>
+    </div>
+
+    <!-- Player de Áudio -->
+    <div class="audio-player" style="display: none;">
+        <audio id="audio" controls>
+            <source src="sua_musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        // Função para avançar para a segunda etapa e iniciar a música
+        document.getElementById('continueButton').addEventListener('click', function() {
+            document.getElementById('initialContainer').style.display = 'none';
+            document.getElementById('secondContainer').style.display = 'flex';
+
+            var audio = document.getElementById('audio');
+            var player = document.querySelector('.audio-player');
+            player.style.display = 'block'; // Exibe o player de áudio
+            audio.play().catch(function(error) {
+                console.log('Erro ao tentar reproduzir o áudio:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+        .play-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Página Inicial com Foto de Fundo e Quadro Centralizado -->
+    <div class="container">
+        <h1>Bem-vinda, Gigi!</h1>
+        <p>Nossa história tem um novo capítulo para escrever...</p>
+        <a href="surpresa.html" class="btn">Vamos escrever juntos?</a>
+        <!-- Botão para Iniciar Música -->
+        <button id="playButton" class="play-button">Iniciar Música</button>
+    </div>
+
+    <!-- Player de Áudio -->
+    <div class="audio-player" style="display: none;">
+        <audio id="audio" controls>
+            <source src="sua_musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        // Função para iniciar a música ao clicar no botão
+        document.getElementById('playButton').addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            var player = document.querySelector('.audio-player');
+            player.style.display = 'block'; // Torna o player visível
+            audio.play().catch(function(error) {
+                console.log('Erro ao tentar reproduzir o áudio:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>

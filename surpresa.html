@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #ff4081;
+        }
+
+        .link-section {
+            margin-top: 30px;
+        }
+
+        .link-section a {
+            display: block;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ff4081;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-section a:hover {
+            background-color: #e03070;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Escolha uma Opção</h2>
+
+        <div class="link-section">
+            <a href="#gallery">Nossas Melhores Lembranças</a>
+            <a href="#video">Uma Mensagem Para Você</a>
+        </div>
+
+        <!-- Galeria de Fotos -->
+        <div id="gallery" class="gallery">
+            <h2>Nossas Melhores Lembranças</h2>
+            <img src="foto1.jpg" alt="Momento Especial 1">
+            <img src="foto2.jpg" alt="Momento Especial 2">
+            <img src="foto3.jpg" alt="Momento Especial 3">
+        </div>
+
+        <!-- Vídeo Especial -->
+        <div id="video" class="video">
+            <h2>Uma Mensagem Para Você</h2>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeos.
+            </video>
+        </div>
+
+    </div>
+
+</body>
+</html>

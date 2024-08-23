@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #fff;
+            background: url('foto_de_fundo.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin: 0 0 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.4em;
+            margin: 20px 0;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e04d36;
+        }
+
+        /* Estilo específico da segunda tela */
+        .second-container {
+            background: url('foto_de_casal.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 60px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            height: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .audio-player {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .audio-player audio {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Primeira etapa -->
+    <div id="initialContainer" class="container">
+        <h1>Boa noite, Gigi!</h1>
+        <p>Gostou do concerto Candlelight, O Quarteto de Cordas - Monte Cristo? Eles mandam bem, né? Mas não estou aqui para isso. Tenho algo para te dizer e essa foi a forma que encontrei de fazer. Gostaria de saber o que?</p>
+        <button id="continueButton" class="btn">Conta seu Safado!!</button>
+    </div>
+
+    <!-- Segunda etapa -->
+    <div id="secondContainer" class="second-container" style="display:none;">
+        <h1>A vida é como um livro, já pensou nisso?</h1>
+        <p>Assim como você é um novo capítulo na minha vida, eu também sou um novo capítulo na sua. Podemos decidir escrever juntos cada linha da minha, da sua, e da nossa história. Concorda que podemos terminar esse livro lado a lado, linha por linha, até o último capítulo, parágrafo, frase, palavra, e estar juntos até o último ponto final de nossas vidas? Vamos fazer acontecer, vamos tentar escrever essas linhas juntos. Já falamos sobre dar certo e sobre a possibilidade de não dar certo, mas e se der certo, Gigi...</p>
+        <!-- Botão para redirecionar -->
+        <button id="playButton" class="btn" style="margin-top: 20px;">Se der certo, clica vai?</button>
+    </div>
+
+    <!-- Player de Áudio -->
+    <div class="audio-player" style="display: none;">
+        <audio id="audio" controls>
+            <source src="sua_musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        // Função para avançar para a segunda etapa e iniciar a música
+        document.getElementById('continueButton').addEventListener('click', function() {
+            document.getElementById('initialContainer').style.display = 'none';
+            document.getElementById('secondContainer').style.display = 'flex';
+
+            var audio = document.getElementById('audio');
+            var player = document.querySelector('.audio-player');
+            player.style.display = 'block'; // Exibe o player de áudio
+            audio.play().catch(function(error) {
+                console.log('Erro ao tentar reproduzir o áudio:', error);
+            });
+        });
+
+        // Função para redirecionar ao clicar no botão da segunda etapa
+        document.getElementById('playButton').addEventListener('click', function() {
+            window.location.href = 'sua_nova_pagina.html'; // Substitua pelo caminho da nova página
+        });
+    </script>
+
+</body>
+</html>

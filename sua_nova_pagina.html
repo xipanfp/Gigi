@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #fff;
+            background: url('foto_de_fundo.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .audio-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .slide .caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            background: rgba(0, 0, 0, 0); /* Fundo transparente */
+            border-radius: 5px;
+            font-size: 2em; /* Tamanho da fonte aumentado */
+            color: #fff;
+            font-family: 'Dancing Script', cursive; /* Fonte cursiva */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            width: 80%; /* Ajuste a largura conforme necessário */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Contêiner para as imagens e legendas -->
+    <div class="overlay">
+        <!-- Slides com imagens e legendas -->
+        <div class="slide" id="slide1">
+            <img src="imagem1.jpg" alt="Imagem 1">
+            <div class="caption">Tá agora deixa eu fazer uma pergunta aqui</div>
+        </div>
+        <div class="slide" id="slide2">
+            <img src="imagem2.jpg" alt="Imagem 2">
+            <div class="caption">Imagina se der certo?</div>
+        </div>
+        <div class="slide" id="slide3">
+            <img src="imagem3.jpg" alt="Imagem 3">
+            <div class="caption">Imagina comigo se der certo</div>
+        </div>
+        <div class="slide" id="slide4">
+            <img src="imagem4.jpg" alt="Imagem 4">
+            <div class="caption">Talvez você esteja pensando</div>
+        </div>
+        <div class="slide" id="slide5">
+            <img src="imagem5.jpg" alt="Imagem 5">
+            <div class="caption">Ah mas pode dar errado</div>
+        </div>
+        <div class="slide" id="slide6">
+            <img src="imagem6.jpg" alt="Imagem 6">
+            <div class="caption">Ah mas se der errado</div>
+        </div>
+        <div class="slide" id="slide7">
+            <img src="imagem7.jpg" alt="Imagem 7">
+            <div class="caption">Ah mas se eu sofrer de novo</div>
+        </div>
+        <div class="slide" id="slide8">
+            <img src="imagem8.jpg" alt="Imagem 8">
+            <div class="caption">Ah mas se eu magoar</BR> Tá mas...</div>
+        </div>
+        <div class="slide" id="slide9">
+            <img src="imagem9.jpg" alt="Imagem 9">
+            <div class="caption">Tá mas...</div>
+        </div>
+        <div class="slide" id="slide10">
+            <img src="imagem10.jpg" alt="Imagem 10">
+            <div class="caption">E se der certo?</div>
+        </div>
+        <div class="slide" id="slide11">
+            <img src="imagem11.jpg" alt="Imagem 11">
+            <div class="caption">Já pensou nisso</div>
+        </div>
+        <div class="slide" id="slide12">
+            <img src="imagem12.jpg" alt="Imagem 12">
+            <div class="caption">Já pensou o quão maravilhoso </br> Pode Ser caso dê certo?</div>
+        </div>
+        <div class="slide" id="slide13">
+            <img src="imagem13.jpg" alt="Imagem 13">
+            <div class="caption"></div>
+        </div>
+        <div class="slide" id="slide14">
+            <img src="imagem14.jpg" alt="Imagem 14">
+            <div class="caption">Talvez pode dar errado sim.</div>
+        </div>
+        <div class="slide" id="slide15">
+            <img src="imagem15.jpg" alt="Imagem 15">
+            <div class="caption">Não tô dizendo que vai dar certo</div>
+        </div>
+        <div class="slide" id="slide16">
+            <img src="imagem16.jpg" alt="Imagem 16">
+            <div class="caption">Mas se der certo também </div>
+        </div>
+        <div class="slide" id="slide17">
+            <img src="imagem17.jpg" alt="Imagem 17">
+            <div class="caption">E se der certo</div>
+        </div>
+        <div class="slide" id="slide18">
+            <img src="imagem18.jpg" alt="Imagem 18">
+            <div class="caption">Talvez nesse momento sua cabeça</div>
+        </div>
+        <div class="slide" id="slide19">
+            <img src="imagem19.jpg" alt="Imagem 19">
+            <div class="caption">Pufff, Explodiu né?</div>
+        </div>
+        <div class="slide" id="slide20">
+            <img src="imagem20.jpg" alt="Imagem 20">
+            <div class="caption">Porque você sabe </br>que se der certo</div>
+        </div>
+        <div class="slide" id="slide21">
+            <img src="imagem21.jpg" alt="Imagem 21">
+            <div class="caption">Pode ser algo incrível</div>
+        </div>
+        <div class="slide" id="slide22">
+            <img src="imagem22.jpg" alt="Imagem 22">
+            <div class="caption">Mas às vezes você também Prefere né</div>
+        </div>
+        <div class="slide" id="slide23">
+            <img src="imagem23.jpg" alt="Imagem 23">
+            <div class="caption">Basear sua vida no</div>
+        </div>
+        <div class="slide" id="slide24">
+            <img src="imagem24.jpg" alt="Imagem 24">
+            <div class="caption">E se der errado né</div>
+        </div>
+        <div class="slide" id="slide25">
+            <img src="imagem25.jpg" alt="Imagem 25">
+            <div class="caption">Que às vezes parece que é </br> Mais confortável</div>
+        </div>
+        <div class="slide" id="slide26">
+            <img src="imagem26.jpg" alt="Imagem 26">
+            <div class="caption">EU não acho que você </br>deveria Tratar isso</div>
+        </div>
+        <div class="slide" id="slide27">
+            <img src="imagem27.jpg" alt="Imagem 27">
+            <div class="caption">Como algo confortável</br> </div>
+        </div>
+        <div class="slide" id="slide28">
+            <img src="imagem28.jpg" alt="Imagem 28">
+            <div class="caption">Mas que o "Se der certo"</div>
+        </div>
+        <div class="slide" id="slide29">
+            <img src="imagem29.jpg" alt="Imagem 29">
+            <div class="caption">É bem melhor do que o </br> "Se der errado"</div>
+        </div>
+        <div class="slide" id="slide30">
+            <img src="imagem30.jpg" alt="Imagem 30">
+            <div class="caption">Mas tá tudo bem...</br>PORQUE VAI DAR CERTO!!!!!!</div>
+        </div>
+        <div class="slide" id="slide31">
+            <img src="imagem31.jpg" alt="Imagem 31">
+            <div class="caption">PORQUE VAI DAR CERTO!!!!!!</div>
+        </div>
+    </div>
+
+    <!-- Contêiner para o áudio -->
+    <div class="audio-container">
+        <audio id="audio" controls>
+            <source src="sua_trilha_sonora.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const audio = document.getElementById('audio');
+            const slideTimings = [
+{ id: 'slide1', start: 00, end: 02 },   // Tá agora deixa eu fazer uma pergunta aqui
+{ id: 'slide2', start: 02, end: 04 },   // Imagina se der certo?
+{ id: 'slide3', start: 04, end: 06 },   // Imagina comigo se der certo
+{ id: 'slide4', start: 06, end: 08 },   // Talvez você esteja pensando
+{ id: 'slide5', start: 08, end: 09 },   // Ah mas pode dar errado
+{ id: 'slide6', start: 10, end: 11 },   // Ah mas se der errado
+{ id: 'slide7', start: 11, end: 13 },   // Ah mas se eu sofrer de novo
+{ id: 'slide8', start: 13, end: 16 },   // Ah mas se eu magoar
+{ id: 'slide09', start: 14, end: 16 },  // Tá mas...
+{ id: 'slide10', start: 16, end: 18 },  // E se der certo?
+{ id: 'slide11', start: 18, end: 19 },  // Já pensou nisso
+{ id: 'slide12', start: 19, end: 23 },  // Já pensou o quão maravilhoso Pode Ser caso dê certo?
+{ id: 'slide13', start: 00, end: 00 },  // Já pensou o quão maravilhoso Pode Ser caso dê certo?
+{ id: 'slide14', start: 22, end: 24 },  // Talvez pode dar errado sim.
+{ id: 'slide15', start: 24, end: 26 },  // Não tô dizendo que vai dar certo
+{ id: 'slide16', start: 26, end: 29 },  // Mas se der certo também
+{ id: 'slide17', start: 29, end: 34 },  // E se der certo
+{ id: 'slide18', start: 31, end: 32 },  // Talvez nesse momento sua cabeça
+{ id: 'slide19', start: 32, end: 34 },  // Pufff, Explodiu né?
+{ id: 'slide20', start: 34, end: 37 },  // Porque você sabe que se der certo
+{ id: 'slide21', start: 37, end: 39 },  // Pode ser algo incrível
+{ id: 'slide22', start: 39, end: 41 },  // Mas às vezes você também Prefere né
+{ id: 'slide23', start: 41, end: 42 },  // Basear sua vida no
+{ id: 'slide24', start: 42, end: 44 },  // E se der errado né
+{ id: 'slide25', start: 44, end: 46 },  // Que às vezes parece que é Mais confortável
+{ id: 'slide26', start: 46, end: 49 },  // EU não acho que você deveria Tratar isso
+{ id: 'slide27', start: 49, end: 50 },  // Como algo confortável
+{ id: 'slide28', start: 51, end: 52 },  // Mas que o "Se der certo"
+{ id: 'slide29', start: 52, end: 54 },  // É bem melhor do que o "Se der errado"
+{ id: 'slide30', start: 54, end: 60 }   // PORQUE VAI DAR CERTO!!!!!!
+
+
+
+            ];
+
+            function showSlide() {
+                const currentTime = audio.currentTime;
+                slides.forEach(slide => slide.classList.remove('active'));
+                slideTimings.forEach(({ id, start, end }) => {
+                    if (currentTime >= start && currentTime < end) {
+                        document.getElementById(id).classList.add('active');
+                    }
+                });
+            }
+
+            audio.addEventListener('timeupdate', showSlide);
+        });
+    </script>
+
+</body>
+</html>
